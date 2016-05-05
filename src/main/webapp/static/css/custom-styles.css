@@ -1,0 +1,37 @@
+.spacer {
+    margin-top: 50px;
+}
+
+.half-spacer {
+    margin-top: 25px;
+
+}
+
+.img-corners {
+    border-radius: 3px;
+    border: 2px solid #1b1b1b;;
+}
+
+
+
+.panel-body {
+    padding: 10px 30px;
+}
+
+.mainSBLink {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+/*THUMBNAIL*/
+.thumbnail {
+    height: 320px;
+}
+
+.bookTitle {
+    min-height: 40px;
+}
+
+
+#filterTag {
+    margin-top: 30px;
+}
