@@ -19,7 +19,7 @@ public class BookOrder {
     private String orderDate;
     private String shipDate;
 
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Customer customer;
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)

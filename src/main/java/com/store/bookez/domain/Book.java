@@ -18,7 +18,7 @@ public class Book {
     @Version
     private Integer version;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private List<BookOrder> bookOrders;
 
     private String ISBN;
