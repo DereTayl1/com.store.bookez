@@ -17,6 +17,7 @@ public class Customer {
     private String phoneNumber;
     private String address;
     private boolean newsletter = true;
+    private String userName;
 
     public Customer() {}
     public Customer(String name) {

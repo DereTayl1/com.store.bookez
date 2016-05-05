@@ -13,4 +13,5 @@ public interface CustomerService {
     Customer saveCustomer(Customer customer);
     Iterable<Customer> saveCustomerList(Iterable<Customer> customerIterable);
     void deleteCustomer(Integer id);
+    Customer findByUserName(String userName);
 }

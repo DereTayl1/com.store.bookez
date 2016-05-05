@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by deretayl1 on 5/3/2016.
  */
 @Controller
-public class CustomerController {
+public class BookController {
 
     @Autowired
     private BookService bookService;

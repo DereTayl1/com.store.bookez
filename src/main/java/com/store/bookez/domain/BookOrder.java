@@ -1,10 +1,6 @@
 package com.store.bookez.domain;
 
-import com.store.bookez.domain.enums.OrderStatus;
-
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,27 +16,26 @@ public class BookOrder {
     @Version
     private Integer version;
 
-    private Date orderDate;
-    private Date shipDate;
+    private String orderDate;
+    private String shipDate;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Customer> customerList;
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    private Customer customer;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private List<Book> books;
 
     private String orderStatus;
 //    private BigDecimal totalPrice;
-//    private boolean shipOnline;
+
 
     public BookOrder() {}
-//    public Order(Date orderDate, Date shipDate, String orderStatus, BigDecimal totalPrice, boolean shipOnline) {
-//        this.orderDate = orderDate;
-//        this.shipDate = shipDate;
-//        this.orderStatus = orderStatus;
-////        this.totalPrice = totalPrice;
-////        this.shipOnline = shipOnline;
-//    }
+
+    public BookOrder(String orderDate, String shipDate, String orderStatus) {
+        this.orderDate = orderDate;
+        this.shipDate = shipDate;
+        this.orderStatus = orderStatus;
+    }
 
     // region GET & SET
     public Integer getId() {
@@ -59,28 +54,28 @@ public class BookOrder {
         this.version = version;
     }
 
-    public Date getOrderDate() {
+    public String getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
 
-    public Date getShipDate() {
+    public String getShipDate() {
         return shipDate;
     }
 
-    public void setShipDate(Date shipDate) {
+    public void setShipDate(String shipDate) {
         this.shipDate = shipDate;
     }
 
-    public List<Customer> getCustomerList() {
-        return customerList;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerList(List<Customer> customerList) {
-        this.customerList = customerList;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public List<Book> getBooks() {
@@ -99,34 +94,4 @@ public class BookOrder {
         this.orderStatus = orderStatus;
     }
 
-//    public BigDecimal getTotalPrice() {
-//        return totalPrice;
-//    }
-//
-//    public void setTotalPrice(BigDecimal totalPrice) {
-//        this.totalPrice = totalPrice;
-//    }
-//
-//    public boolean isShipOnline() {
-//        return shipOnline;
-//    }
-//
-//    public void setShipOnline(boolean shipOnline) {
-//        this.shipOnline = shipOnline;
-//    }
-    // endregion
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", version=" + version +
-                ", orderDate=" + orderDate +
-                ", shipDate=" + shipDate +
-                ", customerList=" + customerList +
-                ", books=" + books +
-                ", orderStatus=" + orderStatus +
-//                ", totalPrice=" + totalPrice +
-                '}';
-    }
 }

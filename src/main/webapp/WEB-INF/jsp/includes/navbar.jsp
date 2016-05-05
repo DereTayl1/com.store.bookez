@@ -19,7 +19,7 @@
                     <a href="/customer"><i class="fa fa-home"></i> Home</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-history"></i> My Account</a>
+                    <a href="/customer/account/"><i class="fa fa-history"></i> My Account</a>
                 </li>
                 <li>
                     <a href="/customer/pages/1"><i class="fa fa-book"></i> Books</a>
