@@ -35,26 +35,29 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        generateBookOrders();
+//        generateBookOrders();
+//        BookOrder bo = bookOrderService.getBookOrderById(21);
+//        bo.calcTotalPrice();
+//        System.out.println(bo.calcTotalPrice());
+
+
     }
 
-    public void generateBookOrders() {
-        BookOrder bookOrder = new BookOrder("April 14, 2016", "April 25, 2016", "FULFILLED");
-
-        List<Book> bookList = new ArrayList<>();
-        bookList.add(bookService.getBookById(3));
-        bookList.add(bookService.getBookById(10));
-        bookList.add(bookService.getBookById(25));
-        bookList.add(bookService.getBookById(16));
-
-        Customer customer = customerService.getCustomerById(1);
-
-        bookOrder.setBooks(bookList);
-        bookOrder.setCustomer(customer);
-
-        bookOrderService.saveBookOrder(bookOrder);
-
-        log.info(bookOrder.toString());
-    }
+//    public void generateBookOrders() {
+//        BookOrder bookOrder = new BookOrder("April 20, 2016", "May 5, 2016", "FULFILLED");
+//
+//        List<Book> bookList = new ArrayList<>();
+//        bookList.add(bookService.getBookById(8));
+//        bookList.add(bookService.getBookById(22));
+//
+//        Customer customer = customerService.getCustomerById(1);
+//
+//        bookOrder.setBooks(bookList);
+//        bookOrder.setCustomer(customer);
+//
+//        bookOrderService.saveBookOrder(bookOrder);
+//
+//        log.info(bookOrder.toString());
+//    }
 
 }

@@ -1,5 +1,5 @@
 <%@ include file="../includes/header.jsp" %>
-<%@ include file="../includes/navbar.jsp" %>
+<%@ include file="includes/customer_navbar.jsp" %>
 
 <c:url var="firstUrl" value="/customer/pages/1"/>
 <c:url var="lastUrl" value="/customer/pages/${totalPages}"/>
@@ -24,14 +24,9 @@
                 <div class="col-sm-3">
                     <h3>Book <span class="text-primary"><strong>List</strong></span></h3>
                 </div>
-                <!-- Filter -->
-                <div class="col-sm-2">
-                    <div id="filterTag" class="list-inline pull-right">
-                        Current Filter:<span class="text-success"><strong> Rating</strong></span>
-                    </div>
-                </div>
+
                 <!-- Pagination -->
-                <div class="col-sm-7">
+                <div class="col-sm-9">
                     <%@ include file="../customer/includes/book_pagination.jsp" %>
                 </div>
             </div>

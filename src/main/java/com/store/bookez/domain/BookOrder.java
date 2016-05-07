@@ -1,6 +1,9 @@
 package com.store.bookez.domain;
 
+import org.apache.log4j.Logger;
+
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -8,6 +11,7 @@ import java.util.List;
  */
 @Entity
 public class BookOrder {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "OrderId")
@@ -19,15 +23,22 @@ public class BookOrder {
     private String orderDate;
     private String shipDate;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Customer customer;
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private List<Book> books;
 
     private String orderStatus;
-//    private BigDecimal totalPrice;
+    private String totalPrice;
 
+    public String getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(String totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 
     public BookOrder() {}
 
@@ -93,5 +104,35 @@ public class BookOrder {
     public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
     }
+    //endregion
+
+    @Override
+    public String toString() {
+        return "BookOrder{" +
+                "id=" + id +
+                ", version=" + version +
+                ", orderDate='" + orderDate + '\'' +
+                ", shipDate='" + shipDate + '\'' +
+                ", customer=" + customer +
+                ", books=" + books +
+                ", orderStatus='" + orderStatus + '\'' +
+                '}';
+    }
+
+    public String calcTotalPrice() {
+        //get the list of books
+        List<Book> bookList = this.books;
+        //get the price from the books
+
+
+        Double total = new Double(0);
+        for (Book i : bookList) {
+            total += Double.parseDouble(i.getPrice());
+        }
+        BigDecimal bigTotal = new BigDecimal(total).setScale(2, BigDecimal.ROUND_HALF_UP);
+        return bigTotal.toString();
+
+    }
 
 }
+

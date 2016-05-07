@@ -1,5 +1,6 @@
 <%@ include file="../includes/header.jsp" %>
-<%@ include file="includes/customer_navbar.jsp" %>
+<%@ include file="includes/admin_navbar.jsp" %>
+
 
 <!-- Page Content -->
 <div class="container spacer">
@@ -13,21 +14,19 @@
             <div class="row half-spacer">
                 <!-- Title -->
                 <div class="col-sm-3">
-                    <h3>${fullName}</h3>
-                    <h3>${address}</h3>
-                    <h3>${phoneNumber}</h3>
-                    <h3>${email}</h3>
+                    <h3>Customer <span class="text-primary"><strong>Manager</strong></span></h3>
                 </div>
+                <c:forEach var="customer" items="${customerList}">
+                    <ul>
+                        <li>${customer.name}</li>
+                    </ul>
 
-
-
+                </c:forEach>
             </div>
-            <!-- ORDER HISTORY -->
-            <%@ include file="../customer/includes/account_history.jsp" %>
+
         </div>
-        <!-- Modal: PRODUCT INFO -->
-        <%@ include file="../customer/includes/book_info.jsp" %>
+
     </div>
 
 
-<%@ include file="../includes/footer.jsp" %>
+    <%@ include file="../includes/footer.jsp" %>

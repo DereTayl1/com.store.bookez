@@ -27,11 +27,16 @@
     height: 320px;
 }
 
+.thumbnail {
+    height: 320px;
+}
+
 .bookTitle {
     min-height: 40px;
 }
 
-
-#filterTag {
-    margin-top: 30px;
+@media (min-width: 768px){
+    .navbar-nav {
+        margin-left: 100px;
+    }
 }

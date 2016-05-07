@@ -1,10 +1,13 @@
 package com.store.bookez.services.impl;
 
 import com.store.bookez.domain.BookOrder;
+import com.store.bookez.domain.Customer;
 import com.store.bookez.repositories.BookOrderRepository;
 import com.store.bookez.services.BookOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by deretayl1 on 5/2/2016.
@@ -23,6 +26,13 @@ public class BookOrderServiceImpl implements BookOrderService {
     public BookOrder getBookOrderById(Integer id) {
         return bookOrderRepository.findOne(id);
     }
+
+    @Override
+    public List<BookOrder> findByCustomer(Customer customer) {
+        return bookOrderRepository.findByCustomer(customer);
+    }
+
+
 
     @Override
     public BookOrder saveBookOrder(BookOrder bookOrder) {

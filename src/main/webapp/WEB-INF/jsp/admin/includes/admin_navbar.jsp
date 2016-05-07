@@ -15,19 +15,25 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <%--<li>--%>
-                <%--<a href="/customer"><i class="fa fa-"></i> What's New?</a>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                <%--<a href="/customer/account/"><i class="fa fa-history"></i> My Account</a>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                <%--<a href="/customer/pages/1"><i class="fa fa-book"></i> Books</a>--%>
-                <%--</li>--%>
+                <li>
+                    <a href="/admin"><i class="fa fa-home"></i> Home</a>
+                </li>
+                <li>
+                    <a href="/admin/customers/"><i class="fa fa-users"></i> Customers</a>
+                </li>
+                <li>
+                    <a href="/admin/orders"><i class="fa fa-file-text"></i> Orders</a>
+                </li>
+                <li>
+                    <a href="/admin/books"><i class="fa fa-book"></i> Books</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <%--LOGIN LINK--%>
-                <li><a href="/login">Log-In <i class="fa fa-unlock"></i></a></li>
+
+
+                <li><a href="/logout">Logout <i class="fa fa-lock"></i></a></li>
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->

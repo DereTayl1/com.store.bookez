@@ -1,5 +1,5 @@
 <%@ include file="../includes/header.jsp" %>
-<%@ include file="../includes/navbar.jsp" %>
+<%@ include file="includes/customer_navbar.jsp" %>
 
 <!-- Page Content -->
 <div class="container spacer">

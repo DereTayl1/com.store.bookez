@@ -15,19 +15,27 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <%--<li>--%>
-                <%--<a href="/customer"><i class="fa fa-"></i> What's New?</a>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                <%--<a href="/customer/account/"><i class="fa fa-history"></i> My Account</a>--%>
-                <%--</li>--%>
-                <%--<li>--%>
-                <%--<a href="/customer/pages/1"><i class="fa fa-book"></i> Books</a>--%>
-                <%--</li>--%>
+                <li>
+                    <a href="/customer"><i class="fa fa-home"></i> Home</a>
+                </li>
+                <li>
+                    <a href="/customer/account/"><i class="fa fa-history"></i> My Account</a>
+                </li>
+                <li>
+                    <a href="/customer/pages/1"><i class="fa fa-book"></i> Books</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <%--LOGIN LINK--%>
-                <li><a href="/login">Log-In <i class="fa fa-unlock"></i></a></li>
+
+
+                <li><a href="/logout">Log Out <i class="fa fa-lock"></i></a></li>
+                <li>
+                    <a href="#" class="text-primary">
+                        <i class="fa fa-shopping-cart fa-lg text-primary"></i>
+                        <span class="label">0</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
