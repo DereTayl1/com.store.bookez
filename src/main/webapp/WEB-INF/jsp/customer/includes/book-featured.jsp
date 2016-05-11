@@ -1,8 +1,16 @@
+<!-- Title -->
+<div class="row neg-spacer-25">
+    <div class="col-lg-12">
+        <h3>New <span class="text-primary"><strong>Arrivals</strong></span></h3>
+    </div>
+</div>
+<%--Featured PRODUCT--%>
 <div class="row">
-    <c:forEach var="book" items="${bookList}">
-        <div class="col-md-3 col-sm-6 hero-feature">
+    <div class="spacer-20-border"></div>
+    <c:forEach var="book" begin="1" end="4" items="${bookList}">
+        <div class="col-sm-3">
 
-            <div class="thumbnail">
+            <div class="thumbnail ft-thumb">
                 <img class="round-corner-3" src="${book.imageURL}" alt="${book.title}">
                 <div class="caption">
                     <h5 class="bookTitle">${book.title}</h5>
@@ -33,5 +41,5 @@
 
         </div>
     </c:forEach>
+
 </div>
-<!-- /.row -->

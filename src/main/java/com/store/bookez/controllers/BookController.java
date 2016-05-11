@@ -1,5 +1,6 @@
 package com.store.bookez.controllers;
 
+import com.store.bookez.common.LoginHelper;
 import com.store.bookez.domain.Book;
 import com.store.bookez.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,10 @@ public class BookController {
     private BookService bookService;
 
     @RequestMapping(value = "/customer")
-    public String getCustomerHome(ModelMap model) {
+    public String getCustomerHome(Model model) {
+        model.addAttribute("bookList", bookService.BookListAll());
+
+        LoginHelper.displayUserName(model);
 
         return "customer/customerHome";
     }
@@ -32,7 +36,7 @@ public class BookController {
     public String getCustomerBooks(Model model) {
         model.addAttribute("bookList", bookService.BookListAll());
 
-        displayUserName(model);
+        LoginHelper.displayUserName(model);
 
 
         return "customer/customer_books";
@@ -41,7 +45,7 @@ public class BookController {
     @RequestMapping(value = "/customer/pages/{pageNumber}", method = RequestMethod.GET)
     public String getRunbookPage(@PathVariable Integer pageNumber, Model model) {
 
-        displayUserName(model);
+        LoginHelper.displayUserName(model);
         setUpPagination(pageNumber, model);
 
 
@@ -49,11 +53,6 @@ public class BookController {
     }
 
     // region CONTROLLER METHODS
-    public void displayUserName(Model model) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String name = auth.getName(); //get logged in username
-        model.addAttribute("userName", auth.getName());
-    }
     public void setUpPagination(@PathVariable Integer pageNumber, Model model) {
         Page<Book> page = bookService.getBookPages(pageNumber);
 

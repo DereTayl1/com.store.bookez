@@ -1,6 +1,8 @@
 package com.store.bookez;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +13,9 @@ import org.springframework.context.annotation.Bean;
  */
 @SpringBootApplication
 public class Application {
+
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
+    
     @Value("${spring.datasource.driverClassName}")
     private String databaseDriverClassName;
 

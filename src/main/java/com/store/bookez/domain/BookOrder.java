@@ -1,6 +1,6 @@
 package com.store.bookez.domain;
 
-import org.apache.log4j.Logger;
+import com.store.bookez.common.BookHelper;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -31,14 +31,7 @@ public class BookOrder {
 
     private String orderStatus;
     private String totalPrice;
-
-    public String getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(String totalPrice) {
-        this.totalPrice = totalPrice;
-    }
+    private String totalBooks;
 
     public BookOrder() {}
 
@@ -49,6 +42,26 @@ public class BookOrder {
     }
 
     // region GET & SET
+    public String getTotalBooks() {
+        String totalBooks = BookHelper.NumberOfBooks(books);
+        return totalBooks;
+    }
+
+    public void setTotalBooks(String totalBooks) {
+        this.totalBooks = totalBooks;
+    }
+
+
+    public String getTotalPrice() {
+        String totalPrice = calcTotalPrice(this);
+        return totalPrice;
+    }
+
+    public void setTotalPrice(String totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+
     public Integer getId() {
         return id;
     }
@@ -106,6 +119,7 @@ public class BookOrder {
     }
     //endregion
 
+
     @Override
     public String toString() {
         return "BookOrder{" +
@@ -119,9 +133,9 @@ public class BookOrder {
                 '}';
     }
 
-    public String calcTotalPrice() {
+    public static String calcTotalPrice(BookOrder bookOrder) {
         //get the list of books
-        List<Book> bookList = this.books;
+        List<Book> bookList = bookOrder.books;
         //get the price from the books
 
 
@@ -133,6 +147,7 @@ public class BookOrder {
         return bigTotal.toString();
 
     }
+
 
 }
 

@@ -46,24 +46,35 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        //permit all with no authentication
-        httpSecurity
-                //create authentication for admin and anything with the URL=/admin/**
-                .authorizeRequests().antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
-                .and()
-//                .authorizeRequests().antMatchers("/customer/**").permitAll();
-                .authorizeRequests().antMatchers("/customer/**").access("hasRole('ROLE_USER')");
-
+        //region ACCESS CONTROLL
         httpSecurity
                 .authorizeRequests().antMatchers("/static/**").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/login**").permitAll()
                 .and()
-                .authorizeRequests().antMatchers("/").permitAll().anyRequest().authenticated()
-                .and()
-                .formLogin();
+                .authorizeRequests().antMatchers("/").permitAll().anyRequest().authenticated();
 
+
+        httpSecurity
+                //create authentication for admin and anything with the URL=/admin/**
+                .authorizeRequests().antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
+                .and()
+                //.authorizeRequests().antMatchers("/customer/**").permitAll();
+                .authorizeRequests().antMatchers("/customer/**").access("hasRole('ROLE_USER')");
+
+        //endregion
+
+        //region LOGIN
+        httpSecurity
+                .formLogin().loginPage("/login").loginProcessingUrl("/login.do")
+                .defaultSuccessUrl("/", true)
+                .failureUrl("/login?err=1")
+                .usernameParameter("username").passwordParameter("password");
+        //endregion
+
+        //region ADVANCED SETTINGS
         httpSecurity.csrf().disable();
         httpSecurity.headers().frameOptions().disable();
+        //endregion
     }
 }

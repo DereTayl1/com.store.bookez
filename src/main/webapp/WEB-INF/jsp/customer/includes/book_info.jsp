@@ -28,13 +28,12 @@
                             Fusce eu nibh augue. </p>
                         <h5 id="modalBookPrice" class="text-primary"></h5>
 
-
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-info">BUY NOW!</button>
+                <button type="button" class="btn btn-info">Add To Cart</button>
             </div>
         </div>
     </div>

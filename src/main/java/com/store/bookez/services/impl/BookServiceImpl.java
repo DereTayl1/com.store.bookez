@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class BookServiceImpl implements BookService {
+public class  BookServiceImpl implements BookService {
     private static final int PAGE_SIZE = 8;
 
     @Autowired

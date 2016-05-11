@@ -1,5 +1,5 @@
 <!-- Footer -->
-<hr/>
+<hr class="spacer-100"/>
 <footer>
     <div class="row">
         <div class="col-lg-12">
@@ -9,7 +9,6 @@
 </footer>
 
 </div>
-
 
 </body>
 

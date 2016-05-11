@@ -43,5 +43,7 @@
     <c:url value="/static/css/custom-styles.css" var="customCSS"/>
     <link rel="stylesheet" href="${customCSS}" media="screen"/>
 
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto+Condensed' rel='stylesheet'
+          type='text/css'>
 </head>
 <body>

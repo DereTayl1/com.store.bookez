@@ -2,86 +2,19 @@
 <%@ include file="includes/customer_navbar.jsp" %>
 
 <!-- Page Content -->
-<div class="container spacer">
+<div class="container spacer-50">
 
     <!-- Jumbotron Header -->
-    <header class="jumbotron spacer">
-        <h1>Welcome To Book-<span class="text-primary"><strong>EZ</strong></span></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-        <p><a class="btn btn-primary btn-large">StartShopping</a>
+    <header class="jumbotron jumbotron-img text-center">
+        <h1>Welcome To Book-<span class="text-light-blue"><strong>EZ</strong></span></h1>
+        <p class="text-white">Find the right book, <span class="text-primary"><strong>  at the right price.</strong></span></p>
         </p>
+        <a href="/customer/pages/1" class="btn btn-wide btn-warning spacer-25"><strong class="h5">View <i class="fa fa-fw fa-book"></i> Book List</strong></a>
     </header>
 
-    <hr>
-
-    <!-- Title -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h3>New <span class="text-primary"><strong>Arrivals</strong></span></h3>
-        </div>
-    </div>
+    <%--FEATURED PRODUCT--%>
+    <%@ include file="../customer/includes/book-featured.jsp" %>
     <!-- /.row -->
 
-    <!-- Page Features -->
-    <div class="row text-center">
 
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
-                <div class="caption">
-                    <h3>Feature Label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
-                <div class="caption">
-                    <h3>Feature Label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
-                <div class="caption">
-                    <h3>Feature Label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
-                <div class="caption">
-                    <h3>Feature Label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-
-
-<%@ include file="../includes/footer.jsp" %>
+    <%@ include file="../includes/footer.jsp" %>

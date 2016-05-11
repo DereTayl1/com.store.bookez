@@ -1,5 +1,5 @@
-<div class="pull-right">
-    <ul class="pagination">
+<div>
+    <ul class="pagination pull-right">
         <c:choose>
             <c:when test="${currentIndex == 1}">
                 <li class="disabled"><a href="#">&laquo;&laquo;</a></li>
