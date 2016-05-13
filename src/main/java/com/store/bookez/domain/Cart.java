@@ -1,6 +1,9 @@
 package com.store.bookez.domain;
 
+import com.store.bookez.common.BookHelper;
+
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -22,7 +25,8 @@ public class Cart {
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private List<Book> books;
 
-    private Integer totalBooks;
+    private String totalBooks;
+    private String totalPrice;
 
 
     // region GET & SET
@@ -58,14 +62,28 @@ public class Cart {
         this.books = books;
     }
 
-    public Integer getTotalBooks() {
-        return totalBooks;
+    public String getTotalBooks() {
+        String totalBooks = BookHelper.NumberOfBooks(books);
+        return totalBooks;    }
+    public String getTotalPrice() {
+        String totalPrice = calcTotalCartPrice(this);
+        return totalPrice;
     }
 
-    public void setTotalBooks(Integer totalBooks) {
-        this.totalBooks = totalBooks;
-    }
     // endregion
 
+    public static String calcTotalCartPrice(Cart cart) {
+        //get the list of books
+        List<Book> bookList = cart.books;
+        //get the price from the books
+
+
+        Double total = new Double(0);
+        for (Book i : bookList) {
+            total += Double.parseDouble(i.getPrice());
+        }
+        BigDecimal bigTotal = new BigDecimal(total).setScale(2, BigDecimal.ROUND_HALF_UP);
+        return bigTotal.toString();
+    }
 
 }

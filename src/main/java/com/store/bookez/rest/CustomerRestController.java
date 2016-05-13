@@ -1,12 +1,11 @@
 package com.store.bookez.rest;
 
 import com.store.bookez.domain.Book;
-import com.store.bookez.repositories.BookRepository;
+import com.store.bookez.domain.Customer;
+import com.store.bookez.services.BookService;
+import com.store.bookez.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by deretayl1 on 5/4/2016.
@@ -14,15 +13,38 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CustomerRestController {
 
-    private BookRepository bookRepository;
+    private BookService bookService;
 
     @Autowired
-    public void setBookRepository(BookRepository bookRepository){
-        this.bookRepository = bookRepository;
+    public CustomerService customerService;
+
+    @Autowired
+    public void setBookService(BookService bookService) {
+        this.bookService = bookService;
     }
 
-    @RequestMapping (value = "/book/info/{id}")
-    public Book getBookInfo(@PathVariable Integer id){
-        return bookRepository.findOne(id);
+    @RequestMapping(value = "/book/info/{id}")
+    public Book getBookInfo(@PathVariable Integer id) {
+        return bookService.getBookById(id);
+    }
+
+    @RequestMapping(value = "/customer/get/{customerId}")
+    public Customer getCustomer (@PathVariable Integer customerId){
+        return customerService.getCustomerById(customerId);
+    }
+
+    @RequestMapping(value = "/customer/edit")
+    public Customer editCustomer(@ModelAttribute ("editCustomer") Customer customer){
+        return customerService.saveCustomer(customer);
+    }
+
+    @RequestMapping(value = "/customer/add")
+    public Customer addCustomer(@ModelAttribute ("addCustomer") Customer customer) {
+        return customerService.saveCustomer(customer);
+    }
+
+    @RequestMapping(value = "/customer/delete/{customerId}")
+    public void deleteCustomer(@PathVariable Integer customerId){
+        customerService.deleteCustomer(customerId);
     }
 }

@@ -21,13 +21,12 @@
                     </div>
 
                     <p>${book.author}</p>
-                    <p>
-                        <a href="#" class="btn btn-info">Buy Now!</a>
-                        <button id="${book.id}" onclick="openModal(${book.id})" class="btn btn-default">More
-                            Info
-                        </button>
 
-                    </p>
+                    <button id="${book.id}" onclick="addToCart(${book.id})" class="btn btn-info">Add <i
+                            class="fa fa-fw fa-shopping-cart"></i></button>
+
+                    <button id="${book.id}" onclick="openModal(${book.id})" class="btn btn-default"><i class="fa fa-fw fa-info-circle"></i> Book Info </button>
+
                 </div>
             </div>
 

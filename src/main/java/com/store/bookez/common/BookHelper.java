@@ -14,8 +14,6 @@ import java.util.List;
  * Created by deretayl1 on 5/10/2016.
  */
 public class BookHelper {
-    @Autowired
-    private BookRepository bookRepository;
 
     public static String NumberOfBooks(List<Book> books) {
         List<Book> bookList = books;

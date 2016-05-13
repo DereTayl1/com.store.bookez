@@ -33,7 +33,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-info">Add To Cart</button>
+                <button id="${book.id}" onclick="addToCart(${book.id})" class="btn btn-info">Add to Cart</button>
             </div>
         </div>
     </div>

@@ -19,6 +19,14 @@ public class Customer {
     private boolean newsletter = true;
     private String userName;
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public Customer() {}
     public Customer(String name) {
         this.name = name;

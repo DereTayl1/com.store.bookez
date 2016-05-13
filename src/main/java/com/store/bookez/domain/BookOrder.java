@@ -47,20 +47,15 @@ public class BookOrder {
         return totalBooks;
     }
 
-    public void setTotalBooks(String totalBooks) {
-        this.totalBooks = totalBooks;
-    }
-
 
     public String getTotalPrice() {
-        String totalPrice = calcTotalPrice(this);
+        String totalPrice = calcTotalOrderPrice(this);
         return totalPrice;
     }
 
     public void setTotalPrice(String totalPrice) {
         this.totalPrice = totalPrice;
     }
-
 
     public Integer getId() {
         return id;
@@ -133,7 +128,7 @@ public class BookOrder {
                 '}';
     }
 
-    public static String calcTotalPrice(BookOrder bookOrder) {
+    public static String calcTotalOrderPrice(BookOrder bookOrder) {
         //get the list of books
         List<Book> bookList = bookOrder.books;
         //get the price from the books
@@ -145,7 +140,6 @@ public class BookOrder {
         }
         BigDecimal bigTotal = new BigDecimal(total).setScale(2, BigDecimal.ROUND_HALF_UP);
         return bigTotal.toString();
-
     }
 
 

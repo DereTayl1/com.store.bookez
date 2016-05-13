@@ -1,6 +1,7 @@
 <%@ include file="../includes/header.jsp" %>
 <%@ include file="includes/admin_navbar.jsp" %>
 
+<script src="../../../static/js/book_ez.js"></script>
 
 <!-- Page Content -->
 <div class="container spacer-50">
@@ -11,18 +12,10 @@
         </div>
         <%--Main Content--%>
         <div class="col-sm-10">
-            <div class="row spacer-25">
-                <!-- Title -->
-                <div class="col-sm-3">
-
-                </div>
-                <c:forEach var="customer" items="${customerList}">
-                    <ul>
-                        <li>${customer.name}</li>
-                    </ul>
-
-                </c:forEach>
-            </div>
+            <%--CUSTOMER LIST--%>
+            <%@ include file="../admin/includes/customer_list.jsp" %>
+            <%--CUSTOMER ADD--%>
+            <%@ include file="../admin/includes/customer_add.jsp" %>
 
         </div>
 

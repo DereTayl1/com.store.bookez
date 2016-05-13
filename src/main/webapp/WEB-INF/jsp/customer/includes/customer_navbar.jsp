@@ -3,7 +3,8 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -20,7 +21,8 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title=""><i class="fa fa-lg fa-dashboard fa-navitem"></i> My Account <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title=""><i
+                            class="fa fa-lg fa-dashboard fa-navitem"></i> My Account <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="/customer/account/"> Account Settings</a>
@@ -36,18 +38,18 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title=""><span class="text-success">${userName}</span> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title=""><span
+                            class="text-success">${userName}</span> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="/logout"> Log-Out</a>
                         </li>
-                        <li>
-                            <a href="/customer"> User</a>
-                        </li>
+
                     </ul>
                 </li>
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#searchModal"><i class="fa fa-fw fa-search"></i> <span class="hidden-lg hidden-md hidden-sm">Search Themes</span></a>
+                    <a href="#"><i class="fa fa-fw fa-shopping-cart"></i> <span id="cartTotal"
+                                                                                class="badge">${cartTotal}</span> </a>
                 </li>
             </ul>
         </div>

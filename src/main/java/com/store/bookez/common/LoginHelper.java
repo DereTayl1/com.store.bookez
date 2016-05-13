@@ -18,10 +18,9 @@ public class LoginHelper {
         }
     }
 
-    public static String getUserName(Model model){
+    public static String getUserName(){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String userName = auth.getName(); //get logged in username
-
         return userName;
     }
 }

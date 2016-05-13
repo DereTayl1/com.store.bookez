@@ -55,12 +55,10 @@ public class AccountController {
         List<BookOrder> bookOrder = bookOrderService.findByCustomer(customer);
 
         for(BookOrder order : bookOrder){
-            order.setTotalPrice(BookOrder.calcTotalPrice(order));
+            order.setTotalPrice(BookOrder.calcTotalOrderPrice(order));
         }
-
         log.info(bookOrder);
         log.info(customer);
-
         model.addAttribute("bookOrderList", bookOrder);
 
 
